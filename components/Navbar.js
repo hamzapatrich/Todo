@@ -4,27 +4,43 @@ import {useState} from 'react';
 
 
 function Navbar(){
-
-	const [transform, setTransform] = useState(false);
-	console.log(transform);
-	return(
-		<div className={style.container}>
-			<span className={style.logo}>Logo</span>
-			<ul className={style.navElements}>
+	let navElements = (style) => {
+		return (
+			<ul className={style}>
 				<Link href="/"><a>Features</a></Link>
 				<Link href="/"><a>Premium</a></Link>
 				<Link href="/"><a>Homes</a></Link>
 				
 			</ul>
-			<ul className={style.navLogin}>
-				<Link href='/' ><a>Log in</a></Link>
-				<Link href='/' ><a>Sign up</a></Link>
-			</ul>
-			<div onClick={()=> setTransform(!transform)} className={style.barMenu}>
-				<div className={style.bar1}></div>
-				<div className={style.bar2}></div>
+		)
+	}
+
+	const [transform, setTransform] = useState(false);
+	
+	return(
+		<>
+			<div className={style.container}>
+				<span className={style.logo}>Logo</span>
+				{navElements(style.navElements)}
+				
+				<ul className={style.navLogin}>
+					<Link href='/' ><a>Log in</a></Link>
+					<Link href='/' ><a>Sign up</a></Link>
+				</ul>
+				<div onClick={()=> setTransform(!transform)} className={`${style.barMenu} ${transform ? 'open' : 'close'} `}>
+					<div className= {`${style.bar1} ${transform ? style.openbar1 : 'close'}`}></div>
+					<div className= {`${style.bar2} ${transform ? style.openbar2 : 'close'}`}></div>
+				</div>
+				
 			</div>
-		</div>
+			{transform 
+				?  <div > 
+					{navElements(style.smMenu)}
+					<button>Login in</button>
+					<button>Sign up</button>
+				</div> : null}
+		</>
 	)
 }
 export default Navbar;
+

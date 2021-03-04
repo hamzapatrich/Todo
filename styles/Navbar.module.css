@@ -2,12 +2,14 @@
     display: flex;
     justify-content: space-around;
     padding: 0 1vw ;
-    font-size: var(--text-sm);
+    font-size: var(--text-md);
+    transition: all 0.3s;
     
 }
 .logo{
     display: flex;
     align-items: center;
+    z-index: 1000;
 }
 
 .navElements {
@@ -25,13 +27,29 @@
 .navLogin >a {
     margin: 0 1vw
 }
+.smMenuContainer{
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+}
+.smMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+     
+
+}
 
 
 
-@media screen and (max-width:800px){
-    .container{
-        font-size: var(--text-md)
-    }
+@media screen and (max-width:760px){
+    
     .navElements{
         display: none;
     }
@@ -43,18 +61,34 @@
         align-self: center;
         width: 40px;
         min-height: 20px;
+        z-index: 1000;
         
     }
     .bar1{
         background-color: black;
         height: 6px;
         width: 100%;
+        transition: all 0.3s;
     }
     .bar2{
         background-color: black;
         height: 6px;
         width: 100%;
+        transition: all 0.3s;
 
+    }
+    .openbar1{
+        transition: all 0.3s;
+        box-sizing: border-box;
+        transform: rotate(135deg);
+        margin-top: 8px;
+    
+    }
+    .openbar2{
+        transition: all 0.3s;
+        box-sizing: border-box;
+        transform: rotate(-135deg);
+        margin-top: -9px;
     }
     
 }
