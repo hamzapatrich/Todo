@@ -1,4 +1,4 @@
-import Head from "next/head";
+
 import {addTodo} from '../redux/actions';
 import {connect} from 'react-redux'
 import {useFormik} from 'formik'
@@ -28,6 +28,7 @@ import TodoList from "../components/TodoList";
   
   return (
     <div>
+      
       <form onSubmit={formik.handleSubmit}>
         <h1> Welcome</h1>
         <input id ='todo' type='text' {...formik.getFieldProps('todo')}/>
