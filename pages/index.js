@@ -4,7 +4,9 @@ import {connect} from 'react-redux'
 import {useFormik} from 'formik'
 import store from '../redux/store'
 import * as Yup from 'yup';
+import {useEffect,useState} from 'react';
 import TodoList from "../components/TodoList";
+import useWindowDimensions from '../utils/windowHook';
 
  function Home( props) {
   const formik = useFormik({
@@ -21,14 +23,11 @@ import TodoList from "../components/TodoList";
     }
   
   })
-  
-  
-  
-  
+ 
+const {height,width} = useWindowDimensions();   
   
   return (
     <div>
-      
       <form onSubmit={formik.handleSubmit}>
         <h1> Welcome</h1>
         <input id ='todo' type='text' {...formik.getFieldProps('todo')}/>
@@ -36,6 +35,8 @@ import TodoList from "../components/TodoList";
         <button type='submit'>Click</button>
       </form>
       <TodoList/>
+
+      <p>{height} and {width}</p>
     </div>
     
     

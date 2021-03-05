@@ -30,20 +30,31 @@
 .smMenuContainer{
     width: 100vw;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: 0;
     right: 0;
     z-index: 10;
+    background-color: white;
 
+}
+.smMenuContainer>button {
+    width: 70%;
+    
+    font-size: var(--text-sm);
+    margin: 1% 0;
 }
 .smMenu{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+    font-size: var(--text-md);
+}
 
-     
-
+.smMenu >a {
+    margin: 1%;
 }
 
 

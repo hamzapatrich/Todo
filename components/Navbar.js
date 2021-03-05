@@ -4,6 +4,7 @@ import {useState} from 'react';
 
 
 function Navbar(){
+	
 	let navElements = (style) => {
 		return (
 			<ul className={style}>
@@ -21,7 +22,7 @@ function Navbar(){
 		<>
 			<div className={style.container}>
 				<span className={style.logo}>Logo</span>
-				{navElements(style.navElements)}
+				{navElements(style.navElements,false)}
 				
 				<ul className={style.navLogin}>
 					<Link href='/' ><a>Log in</a></Link>
@@ -34,10 +35,10 @@ function Navbar(){
 				
 			</div>
 			{transform 
-				?  <div > 
+				?  <div className={style.smMenuContainer} > 
 					{navElements(style.smMenu)}
-					<button>Login in</button>
-					<button>Sign up</button>
+					<button type ='button'>Login in</button>
+					<button type='button'>Sign up</button>
 				</div> : null}
 		</>
 	)
