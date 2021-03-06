@@ -4,6 +4,7 @@
     padding: 0 1vw ;
     font-size: var(--text-md);
     transition: all 0.3s;
+    padding: 0 5vw;
     
 }
 .logo{

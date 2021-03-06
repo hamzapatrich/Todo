@@ -22,7 +22,7 @@ function Navbar(){
 		<>
 			<div className={style.container}>
 				<span className={style.logo}>Logo</span>
-				{navElements(style.navElements,false)}
+				{navElements(style.navElements)}
 				
 				<ul className={style.navLogin}>
 					<Link href='/' ><a>Log in</a></Link>
@@ -34,12 +34,14 @@ function Navbar(){
 				</div>
 				
 			</div>
-			{transform 
-				?  <div className={style.smMenuContainer} > 
-					{navElements(style.smMenu)}
-					<button type ='button'>Login in</button>
-					<button type='button'>Sign up</button>
-				</div> : null}
+			{
+				transform 
+					?  <div className={style.smMenuContainer} > 
+						{navElements(style.smMenu)}
+						<button type ='button'>Login in</button>
+						<button type='button'>Sign up</button>
+					</div> : null
+			}
 		</>
 	)
 }
