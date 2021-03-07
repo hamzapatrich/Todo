@@ -14,9 +14,21 @@
 }
 
 .navElements {
+    margin-left: 7vw;
     flex-grow: 1;
     display: flex;
+    align-items: center;
     justify-content: space-around;
+    
+}
+.navElements>a:hover{
+    
+    border-bottom-style: solid ;
+    border-color: red;
+    
+    
+    
+    
 }
 
 .navLogin {

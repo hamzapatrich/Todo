@@ -7,12 +7,12 @@ function Navbar(){
 	
 	let navElements = (style) => {
 		return (
-			<ul className={style}>
+			<div className={style}>
 				<Link href="/"><a>Features</a></Link>
 				<Link href="/"><a>Premium</a></Link>
 				<Link href="/"><a>Homes</a></Link>
 				
-			</ul>
+			</div>
 		)
 	}
 
